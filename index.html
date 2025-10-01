@@ -17,45 +17,79 @@
             color: #000000;
             line-height: 1.6;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         
         .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        /* Header */
+        .header {
             text-align: center;
-            max-width: 600px;
-            padding: 40px 20px;
+            margin-bottom: 60px;
         }
         
-        h1 {
-            font-size: 3rem;
-            font-weight: 300;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
         }
         
-        .subheader {
-            font-size: 1.2rem;
+        .subtitle {
+            font-size: 1.3rem;
             color: #666666;
-            margin-bottom: 30px;
             font-weight: 400;
         }
         
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-            text-align: left;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+        /* Sections */
+        .section {
+            margin-bottom: 50px;
         }
         
-        .contact {
-            font-size: 1rem;
+        .section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
             color: #333333;
-            border-top: 1px solid #eeeeee;
-            padding-top: 20px;
+        }
+        
+        .section p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        
+        .product-item {
+            margin-bottom: 25px;
+        }
+        
+        .product-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #000000;
+        }
+        
+        .product-description {
+            font-size: 1rem;
+            color: #444444;
+            margin-left: 0;
+        }
+        
+        /* Dividers */
+        .divider {
+            height: 1px;
+            background-color: #eeeeee;
+            margin: 30px 0;
+            border: none;
+        }
+        
+        /* Contact */
+        .contact {
+            text-align: center;
         }
         
         .contact a {
@@ -68,16 +102,53 @@
             text-decoration: underline;
         }
         
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #eeeeee;
+        }
+        
+        .footer p {
+            font-size: 0.9rem;
+            color: #666666;
+            margin: 0;
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
+            .container {
+                padding: 40px 15px;
             }
             
-            .subheader {
+            .main-title {
+                font-size: 2.8rem;
+            }
+            
+            .subtitle {
                 font-size: 1.1rem;
             }
             
-            p {
+            .section h2 {
+                font-size: 1.6rem;
+            }
+            
+            .section p {
+                font-size: 1rem;
+            }
+            
+            .product-name {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
                 font-size: 1rem;
             }
         }
@@ -85,11 +156,44 @@
 </head>
 <body>
     <div class="container">
-        <h1>Metelyk LLC</h1>
-        <div class="subheader">Developer of the MixMatch App</div>
-        <p>Metelyk LLC is a registered Illinois Limited Liability Company. MixMatch will be its first product.</p>
-        <div class="contact">
-            Contact: <a href="mailto:alan@themetelyk.com">alan@themetelyk.com</a>
+        <!-- Header -->
+        <div class="header">
+            <h1 class="main-title">Metelyk LLC</h1>
+            <p class="subtitle">Software Development | Illinois</p>
+        </div>
+        
+        <!-- About Section -->
+        <div class="section">
+            <h2>About</h2>
+            <p>Metelyk LLC is a registered Illinois Limited Liability Company. We build focused digital products that help people connect, compete, and grow.</p>
+        </div>
+        
+        <!-- Products Section -->
+        <div class="section">
+            <h2>Products</h2>
+            
+            <div class="product-item">
+                <div class="product-name">MixMatch</div>
+                <div class="product-description">A sports tracking app for tennis, basketball, and more. Launching soon on iOS.</div>
+            </div>
+            
+            <hr class="divider">
+            
+            <div class="product-item">
+                <div class="product-name">Spread Wings Spread Hope (SWSH)</div>
+                <div class="product-description">A social initiative inspired by the Ukrainian word 'Metelyk' (butterfly), selling butterfly-themed t-shirts to support humanitarian causes.</div>
+            </div>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="section contact">
+            <h2>Contact</h2>
+            <p>For business inquiries, please email <a href="mailto:alan@themetelyk.com">alan@themetelyk.com</a></p>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 Metelyk LLC. All rights reserved.</p>
         </div>
     </div>
 </body>
