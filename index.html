@@ -1083,59 +1083,59 @@
             startCarousel();
             
             // MixMatch Screenshot Carousel functionality
-            let slideIndex = 0;
-            const slides = document.querySelector('.carousel-slide');
-            const images = document.querySelectorAll('.carousel-slide img');
-            const totalSlides = images.length;
-            const dotsContainer = document.querySelector('.carousel-dots');
+            let screenshotSlideIndex = 0;
+            const screenshotSlides = document.querySelector('.screenshot-carousel .carousel-slide');
+            const screenshotImages = document.querySelectorAll('.screenshot-carousel .carousel-slide img');
+            const totalScreenshotSlides = screenshotImages.length;
+            const screenshotDotsContainer = document.querySelector('.screenshot-carousel .carousel-dots');
             
             // Create dots for screenshot carousel
-            if (dotsContainer && totalSlides > 0) {
-                for (let i = 0; i < totalSlides; i++) {
+            if (screenshotDotsContainer && totalScreenshotSlides > 0) {
+                for (let i = 0; i < totalScreenshotSlides; i++) {
                     const dot = document.createElement('span');
                     dot.classList.add('dot');
-                    dot.addEventListener('click', () => currentSlide(i));
-                    dotsContainer.appendChild(dot);
+                    dot.addEventListener('click', () => screenshotCurrentSlide(i));
+                    screenshotDotsContainer.appendChild(dot);
                 }
             }
             
-            const dots = document.querySelectorAll('.dot');
+            const screenshotDots = document.querySelectorAll('.screenshot-carousel .dot');
             
-            function showSlides() {
-                if (slides) {
-                    slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+            function showScreenshotSlides() {
+                if (screenshotSlides) {
+                    screenshotSlides.style.transform = `translateX(${-screenshotSlideIndex * 100}%)`;
                 }
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === slideIndex);
+                screenshotDots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === screenshotSlideIndex);
                 });
             }
             
-            function moveSlide(n) {
-                slideIndex += n;
-                if (slideIndex >= totalSlides) {
-                    slideIndex = 0;
+            function moveScreenshotSlide(n) {
+                screenshotSlideIndex += n;
+                if (screenshotSlideIndex >= totalScreenshotSlides) {
+                    screenshotSlideIndex = 0;
                 }
-                if (slideIndex < 0) {
-                    slideIndex = totalSlides - 1;
+                if (screenshotSlideIndex < 0) {
+                    screenshotSlideIndex = totalScreenshotSlides - 1;
                 }
-                showSlides();
+                showScreenshotSlides();
             }
             
-            function currentSlide(n) {
-                slideIndex = n;
-                showSlides();
+            function screenshotCurrentSlide(n) {
+                screenshotSlideIndex = n;
+                showScreenshotSlides();
             }
             
             // Make functions global for onclick handlers
-            window.moveSlide = moveSlide;
-            window.currentSlide = currentSlide;
+            window.moveSlide = moveScreenshotSlide;
+            window.currentSlide = screenshotCurrentSlide;
             
             // Initial display
-            showSlides();
+            showScreenshotSlides();
             
             // Auto-transition for screenshot carousel
             setInterval(() => {
-                moveSlide(1);
+                moveScreenshotSlide(1);
             }, 4000); // Change image every 4 seconds
         });
     </script>
