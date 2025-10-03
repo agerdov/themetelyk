@@ -159,7 +159,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
+            text-align: center; 
         }
         
         .hero-right {
@@ -208,13 +208,13 @@
             width: 100%;
             max-width: 800px;
             height: 500px;
-            margin: 0 auto;
+            margin: 0 auto; 
             padding: 20px 0;
         }
         
         .swiper-slide {
-            display: flex;
-            justify-content: center;
+            display: flex; 
+            justify-content: center; 
             align-items: center;
             background: transparent;
         }
@@ -225,12 +225,12 @@
             width: auto;
             height: auto;
             object-fit: contain;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-radius: 12px; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15); 
         }
         
         .swiper-pagination {
-            position: relative;
+            position: relative; 
             margin-top: 20px;
         }
         
@@ -240,14 +240,14 @@
         }
         
         .swiper-pagination-bullet-active {
-            opacity: 1;
+            opacity: 1; 
         }
         
         .swiper-button-next,
         .swiper-button-prev {
             color: #007bff;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8); 
+            border-radius: 50%; 
             width: 44px;
             height: 44px;
             margin-top: -22px;
@@ -256,6 +256,71 @@
         .swiper-button-next:after,
         .swiper-button-prev:after {
             font-size: 18px;
+        }
+        
+        /* Coming Soon Banner */
+        .coming-soon-banner {
+            background: #dc3545;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+            margin: 15px 0;
+            display: inline-block;
+        }
+        
+        /* SWSH Carousel */
+        .swsh-carousel {
+            margin: 20px 0;
+        }
+        
+        .swsh-swiper {
+            max-width: 300px;
+            height: 200px;
+        }
+        
+        .swsh-swiper .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        /* Butterflies Coming Soon Animation */
+        .butterflies-conveyor {
+            background: #000;
+            padding: 40px 0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .butterflies-track {
+            display: flex;
+            animation: conveyor-belt 20s linear infinite;
+            gap: 20px;
+        }
+        
+        .butterfly-flag {
+            flex-shrink: 0;
+            width: 100px;
+            height: 60px;
+            background: #fff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        
+        @keyframes conveyor-belt {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
         
         
@@ -760,26 +825,26 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-left">
-                    <div class="hero-text">
-                        <h1>Metelyk</h1>
+                <div class="hero-text">
+                    <h1>Metelyk</h1>
                         <p class="tagline">Inspired by a Butterfly, Growing into More.</p>
-                    </div>
-                    <div class="hero-translation">
-                        <img src="./assets/translation.png" alt="Google Translate showing 'butterfly' translated to 'metelyk' in Ukrainian" loading="lazy" decoding="async">
-                    </div>
+                </div>
+                <div class="hero-translation">
+                    <img src="./assets/translation.png" alt="Google Translate showing 'butterfly' translated to 'metelyk' in Ukrainian" loading="lazy" decoding="async">
+                </div>
                 </div>
                 <div class="hero-right">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="./assets/Inspiration.jpg" alt="Alan's father with butterfly in Ukrainian colors, inspiration for Metelyk" loading="lazy" decoding="async">
-                            </div>
+                            <img src="./assets/Inspiration.jpg" alt="Alan's father with butterfly in Ukrainian colors, inspiration for Metelyk" loading="lazy" decoding="async">
+                        </div>
                             <div class="swiper-slide">
-                                <img src="./assets/Alan_Faya_ukraine.jpg" alt="Alan and his grandmother with a Ukrainian flag" loading="lazy" decoding="async">
-                            </div>
+                            <img src="./assets/Alan_Faya_ukraine.jpg" alt="Alan and his grandmother with a Ukrainian flag" loading="lazy" decoding="async">
+                        </div>
                             <div class="swiper-slide">
                                 <img src="./assets/nika_alan_dobrobut.jpg" alt="Nika and Alan at Dobrobut" loading="lazy" decoding="async">
-                            </div>
+                    </div>
                         </div>
                         <div class="swiper-pagination"></div>
                         <div class="swiper-button-next"></div>
@@ -795,15 +860,15 @@
     <section id="products" class="products">
         <div class="container">
             <h2>Products</h2>
-            <p class="blurb">We build simple, purposeful tools.</p>
             <div class="product-cards">
                 <!-- MixMatch Card -->
                 <div class="product-card">
                     <h3>MixMatch</h3>
                     <img src="./assets/mixmatch-logo-transparent.png" alt="MixMatch logo" class="logo-placeholder" loading="lazy" decoding="async">
                     <!-- TODO: replace this image with your real file -->
-                    <p>A sports tracking app for tennis, basketball, and more.</p>
-                    <p class="status">iOS — Coming soon</p>
+                    <p class="tagline">"Ball don't lie. Prove who's better."</p>
+                    <p>A 1v1 stat tracking app for tennis, basketball, and more.</p>
+                    <div class="coming-soon-banner">Coming Soon</div>
                     <div class="screenshot-carousel">
                         <div class="carousel-container">
                             <div class="carousel-slide">
@@ -828,7 +893,40 @@
                 <div class="product-card">
                     <h3>Spread Wings Spread Hope (SWSH)</h3>
                     <p>Butterfly-themed shirts supporting humanitarian causes.</p>
-                    <p class="stat-highlight">Raised $13K for the Dobrobut Foundation 🇺🇦</p>
+                    <p>Ukraine shirts raise funds for the <a href="https://dobrobut.foundation/en/home_en/" target="_blank" rel="noopener">Dobrobut Foundation</a> 🇺🇦</p>
+                    <div class="swsh-carousel">
+                        <div class="swiper-container swsh-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./assets/ukraine.png" alt="Ukraine flag design" loading="lazy" decoding="async">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/poland.png" alt="Poland flag design" loading="lazy" decoding="async">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/italy_mexico.png" alt="Italy Mexico design" loading="lazy" decoding="async">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/Alan_Faya_ukraine.jpg" alt="Alan and Faya with Ukraine flag" loading="lazy" decoding="async">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/nika_alan_dobrobut.jpg" alt="Nika and Alan at Dobrobut" loading="lazy" decoding="async">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/alan_nika_race.JPG" alt="Alan and Nika at race" loading="lazy" decoding="async">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/abby_appa.JPG" alt="Abby and Appa" loading="lazy" decoding="async">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/Inspiration.jpg" alt="Inspiration photo" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
                     <div class="link-row">
                         <a href="https://www.instagram.com/spreadwingsspreadhope/?hl=en" target="_blank" rel="noopener">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -914,6 +1012,45 @@
         </div>
     </section>
 
+    <!-- Butterflies Coming Soon Section -->
+    <section class="butterflies-conveyor">
+        <div class="container">
+            <h2 style="color: white; text-align: center; margin-bottom: 30px;">Butterflies Coming Soon to Other Countries</h2>
+            <div class="butterflies-track">
+                <div class="butterfly-flag">🇺🇦</div>
+                <div class="butterfly-flag">🇵🇱</div>
+                <div class="butterfly-flag">🇮🇹</div>
+                <div class="butterfly-flag">🇲🇽</div>
+                <div class="butterfly-flag">🇺🇸</div>
+                <div class="butterfly-flag">🇨🇦</div>
+                <div class="butterfly-flag">🇬🇧</div>
+                <div class="butterfly-flag">🇩🇪</div>
+                <div class="butterfly-flag">🇫🇷</div>
+                <div class="butterfly-flag">🇪🇸</div>
+                <div class="butterfly-flag">🇯🇵</div>
+                <div class="butterfly-flag">🇰🇷</div>
+                <div class="butterfly-flag">🇦🇺</div>
+                <div class="butterfly-flag">🇧🇷</div>
+                <div class="butterfly-flag">🇦🇷</div>
+                <div class="butterfly-flag">🇨🇱</div>
+                <div class="butterfly-flag">🇨🇴</div>
+                <div class="butterfly-flag">🇵🇪</div>
+                <div class="butterfly-flag">🇿🇦</div>
+                <div class="butterfly-flag">🇳🇬</div>
+                <div class="butterfly-flag">🇰🇪</div>
+                <div class="butterfly-flag">🇪🇬</div>
+                <div class="butterfly-flag">🇮🇳</div>
+                <div class="butterfly-flag">🇨🇳</div>
+                <div class="butterfly-flag">🇹🇭</div>
+                <div class="butterfly-flag">🇻🇳</div>
+                <div class="butterfly-flag">🇮🇩</div>
+                <div class="butterfly-flag">🇵🇭</div>
+                <div class="butterfly-flag">🇲🇾</div>
+                <div class="butterfly-flag">🇸🇬</div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -933,7 +1070,7 @@
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
+
     <!-- Smooth Scroll Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1030,6 +1167,38 @@
                     1024: {
                         slidesPerView: 3,
                         spaceBetween: 40,
+                    },
+                },
+            });
+            
+            // Initialize SWSH Carousel
+            const swshSwiper = new Swiper('.swsh-swiper', {
+                slidesPerView: 3,
+                spaceBetween: 20,
+                pagination: {
+                    el: '.swsh-swiper .swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swsh-swiper .swiper-button-next',
+                    prevEl: '.swsh-swiper .swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 15,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
                     },
                 },
             });
