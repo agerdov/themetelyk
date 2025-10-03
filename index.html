@@ -12,6 +12,8 @@
     <link rel="preload" as="image" href="./assets/Inspiration.jpg">
     <link rel="preload" as="image" href="./assets/Alan_Faya_ukraine.jpg">
     <link rel="preload" as="image" href="./assets/nika_alan_dobrobut.jpg">
+    <link rel="preload" as="image" href="./assets/mmss1.PNG">
+    <link rel="preload" as="image" href="./assets/mmss2.PNG">
     
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -481,7 +483,8 @@
         .product-card .logo-placeholder { 
             max-width: 150px; 
             height: auto; 
-            margin-bottom: 25px; 
+            margin: 0 auto 25px auto;
+            display: block;
         }
         
         .product-card .screenshots-grid, 
@@ -842,12 +845,23 @@
             }
             
             .swiper-container { 
-                max-width: 90%; 
-                height: 350px; 
+                max-width: 95%; 
+                height: 300px; 
+                margin: 0 auto;
+            }
+            
+            .swiper-slide img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
             }
             
             .product-cards { 
                 grid-template-columns: 1fr; 
+            }
+            
+            .product-card .logo-placeholder {
+                max-width: 120px;
             }
             
             .screenshot-rail img { 
@@ -1141,46 +1155,56 @@
                 observer.observe(section);
             });
             
-            // Initialize Swiper with coverflow effect
-            const swiper = new Swiper('.swiper-container', {
-                effect: 'coverflow',
-                grabCursor: true,
-                centeredSlides: true,
-                slidesPerView: 3,
-                coverflowEffect: {
-                    rotate: 50,
-                    stretch: 0,
-                    depth: 100,
-                    modifier: 1,
-                    slideShadows: true,
+        // Initialize Swiper with coverflow effect
+        const swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 3,
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            loop: true,
+            preloadImages: true,
+            lazy: {
+                loadPrevNext: true,
+                loadPrevNextAmount: 2,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    effect: 'slide',
                 },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                    effect: 'slide',
                 },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                    effect: 'coverflow',
                 },
-                autoplay: {
-                    delay: 4000,
-                    disableOnInteraction: false,
-                },
-                breakpoints: {
-                    320: {
-                        slidesPerView: 1,
-                        spaceBetween: 20,
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        spaceBetween: 30,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 40,
-                    },
-                },
-            });
+            },
+        });
             
             // Initialize SWSH Carousel
             const swshSwiper = new Swiper('.swsh-swiper', {
