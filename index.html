@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metelyk LLC</title>
+    <title>Metelyk LLC - Building Focused Digital Products</title>
     <style>
         * {
             margin: 0;
@@ -11,190 +11,366 @@
             box-sizing: border-box;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
-            font-family: 'Arial', 'Helvetica', sans-serif;
-            background-color: #ffffff;
-            color: #000000;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Arial', 'Helvetica', sans-serif;
             line-height: 1.6;
-            min-height: 100vh;
+            color: #333;
+            background-color: #ffffff;
         }
         
-        .container {
-            max-width: 800px;
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e0e0e0;
+            z-index: 1000;
+            padding: 0 20px;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
         }
         
-        /* Header */
-        .header {
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: #2c3e50;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #2c3e50;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            margin-bottom: 60px;
+            padding: 0 20px;
         }
         
-        .main-title {
-            font-size: 3.5rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
+        .hero-content {
+            max-width: 800px;
         }
         
-        .subtitle {
-            font-size: 1.3rem;
-            color: #666666;
-            font-weight: 400;
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            color: #666;
+            font-weight: 300;
         }
         
         /* Sections */
         .section {
-            margin-bottom: 50px;
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .section h2 {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             font-weight: 600;
-            margin-bottom: 20px;
-            color: #333333;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            text-align: center;
         }
         
         .section p {
             font-size: 1.1rem;
+            color: #666;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .product-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
             margin-bottom: 15px;
-            text-align: left;
         }
         
-        .product-item {
-            margin-bottom: 25px;
-        }
-        
-        .product-name {
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-            color: #000000;
-        }
-        
-        .product-description {
+        .product-card p {
             font-size: 1rem;
-            color: #444444;
-            margin-left: 0;
+            color: #666;
+            text-align: left;
+            line-height: 1.6;
         }
         
-        /* Dividers */
-        .divider {
-            height: 1px;
-            background-color: #eeeeee;
-            margin: 30px 0;
-            border: none;
-        }
-        
-        /* Contact */
+        /* Contact Section */
         .contact {
+            background-color: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .contact-content {
             text-align: center;
         }
         
         .contact a {
-            color: #000000;
+            color: #2c3e50;
             text-decoration: none;
             font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
         }
         
         .contact a:hover {
+            color: #1a252f;
             text-decoration: underline;
         }
         
         /* Footer */
         .footer {
+            background-color: #2c3e50;
+            color: white;
             text-align: center;
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid #eeeeee;
+            padding: 30px 20px;
         }
         
         .footer p {
-            font-size: 0.9rem;
-            color: #666666;
             margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
         
         /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
-                padding: 40px 15px;
+            .nav-links {
+                gap: 20px;
             }
             
-            .main-title {
-                font-size: 2.8rem;
+            .nav-links a {
+                font-size: 0.9rem;
             }
             
-            .subtitle {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
                 font-size: 1.1rem;
             }
             
             .section h2 {
-                font-size: 1.6rem;
+                font-size: 2rem;
             }
             
-            .section p {
-                font-size: 1rem;
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
             
-            .product-name {
-                font-size: 1.1rem;
+            .product-card {
+                padding: 30px;
+            }
+            
+            .section {
+                padding: 60px 20px;
             }
         }
         
         @media (max-width: 480px) {
-            .main-title {
-                font-size: 2.2rem;
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
             }
             
-            .subtitle {
+            .nav-links {
+                margin-top: 15px;
+                gap: 15px;
+            }
+            
+            .hero {
+                padding-top: 120px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
                 font-size: 1rem;
             }
+            
+            .product-card {
+                padding: 20px;
+            }
+        }
+        
+        /* Smooth scrolling offset for fixed navbar */
+        .section {
+            scroll-margin-top: 70px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <h1 class="main-title">Metelyk LLC</h1>
-            <p class="subtitle">Software Development | Illinois</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Metelyk LLC</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-        
-        <!-- About Section -->
-        <div class="section">
-            <h2>About</h2>
-            <p>Metelyk LLC is a registered Illinois Limited Liability Company. We build focused digital products that help people connect, compete, and grow.</p>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Metelyk LLC</h1>
+            <p>Building Focused Digital Products</p>
         </div>
-        
-        <!-- Products Section -->
-        <div class="section">
-            <h2>Products</h2>
-            
-            <div class="product-item">
-                <div class="product-name">MixMatch</div>
-                <div class="product-description">A sports tracking app for tennis, basketball, and more. Launching soon on iOS.</div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About</h2>
+        <p>Metelyk LLC is a registered Illinois Limited Liability Company. We create software products that help people connect, compete, and grow.</p>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section">
+        <h2>Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <h3>MixMatch</h3>
+                <p>A sports tracking app for tennis, basketball, and more. Launching soon on iOS.</p>
             </div>
-            
-            <hr class="divider">
-            
-            <div class="product-item">
-                <div class="product-name">Spread Wings Spread Hope (SWSH)</div>
-                <div class="product-description">A social initiative inspired by the Ukrainian word 'Metelyk' (butterfly), selling butterfly-themed t-shirts to support humanitarian causes.</div>
+            <div class="product-card">
+                <h3>Spread Wings Spread Hope (SWSH)</h3>
+                <p>A social initiative inspired by the Ukrainian word 'Metelyk' (butterfly), selling butterfly-themed t-shirts to support humanitarian causes.</p>
             </div>
         </div>
-        
-        <!-- Contact Section -->
-        <div class="section contact">
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="contact-content">
             <h2>Contact</h2>
             <p>For business inquiries, please email <a href="mailto:alan@themetelyk.com">alan@themetelyk.com</a></p>
         </div>
-        
-        <!-- Footer -->
-        <div class="footer">
-            <p>© 2025 Metelyk LLC. All rights reserved.</p>
-        </div>
-    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Metelyk LLC. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active class to navigation links on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
