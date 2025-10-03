@@ -282,9 +282,67 @@
         }
         
         .swsh-swiper .swiper-slide img {
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            border-radius: 8px;
+        }
+        
+        /* Tagline Styling */
+        .tagline {
+            font-weight: bold;
+            color: #007AFF;
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+        
+        .swsh-tagline {
+            font-weight: bold;
+            color: #007AFF;
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+        
+        /* Privacy Policy Button */
+        .privacy-button {
+            display: inline-block;
+            background: #6c757d;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .privacy-button:hover {
+            background: #5a6268;
+            color: white;
+        }
+        
+        /* Countries Carousel */
+        .countries-carousel {
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .countries-carousel h4 {
+            color: #333; 
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .countries-swiper {
+            max-width: 400px;
+            height: 150px;
+            margin: 0 auto;
+        }
+        
+        .countries-swiper .swiper-slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             border-radius: 8px;
         }
         
@@ -297,7 +355,7 @@
         }
         
         .butterflies-track {
-            display: flex;
+            display: flex; 
             animation: conveyor-belt 20s linear infinite;
             gap: 20px;
         }
@@ -866,9 +924,8 @@
                     <h3>MixMatch</h3>
                     <img src="./assets/mixmatch-logo-transparent.png" alt="MixMatch logo" class="logo-placeholder" loading="lazy" decoding="async">
                     <!-- TODO: replace this image with your real file -->
-                    <p class="tagline">"Ball don't lie. Prove who's better."</p>
+                    <p class="tagline">Ball don't lie. Prove who's better.</p>
                     <p>A 1v1 stat tracking app for tennis, basketball, and more.</p>
-                    <div class="coming-soon-banner">Coming Soon</div>
                     <div class="screenshot-carousel">
                         <div class="carousel-container">
                             <div class="carousel-slide">
@@ -887,39 +944,40 @@
                         </div>
                     </div>
                     <button class="cta-button" disabled>App Store (coming soon)</button>
+                    <a href="https://www.privacypolicies.com/live/25b1d96f-919e-4348-af58-6dd980ff70aa" target="_blank" rel="noopener" class="privacy-button">Privacy Policy</a>
                 </div>
 
                 <!-- SWSH Card -->
                 <div class="product-card">
                     <h3>Spread Wings Spread Hope (SWSH)</h3>
-                    <p>Butterfly-themed shirts supporting humanitarian causes.</p>
+                    <p class="swsh-tagline">Butterfly-themed shirts supporting humanitarian causes.</p>
                     <p>Ukraine shirts raise funds for the <a href="https://dobrobut.foundation/en/home_en/" target="_blank" rel="noopener">Dobrobut Foundation</a> 🇺🇦</p>
                     <div class="swsh-carousel">
                         <div class="swiper-container swsh-swiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="./assets/ukraine.png" alt="Ukraine flag design" loading="lazy" decoding="async">
+                                    <img src="./assets/Alan_Faya_bench.jpg" alt="Alan and Faya on bench" loading="lazy" decoding="async">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="./assets/poland.png" alt="Poland flag design" loading="lazy" decoding="async">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="./assets/italy_mexico.png" alt="Italy Mexico design" loading="lazy" decoding="async">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="./assets/Alan_Faya_ukraine.jpg" alt="Alan and Faya with Ukraine flag" loading="lazy" decoding="async">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="./assets/nika_alan_dobrobut.jpg" alt="Nika and Alan at Dobrobut" loading="lazy" decoding="async">
+                                    <img src="./assets/Alan_Faya.JPG" alt="Alan and Faya" loading="lazy" decoding="async">
                                 </div>
                                 <div class="swiper-slide">
                                     <img src="./assets/alan_nika_race.JPG" alt="Alan and Nika at race" loading="lazy" decoding="async">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="./assets/abby_appa.JPG" alt="Abby and Appa" loading="lazy" decoding="async">
+                                    <img src="./assets/daniel.JPEG" alt="Daniel" loading="lazy" decoding="async">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="./assets/Inspiration.jpg" alt="Inspiration photo" loading="lazy" decoding="async">
+                                    <img src="./assets/jaroh.JPEG" alt="Jaroh" loading="lazy" decoding="async">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/miles.JPG" alt="Miles" loading="lazy" decoding="async">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/tony.JPG" alt="Tony" loading="lazy" decoding="async">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/abby_appa.JPG" alt="Abby and Appa" loading="lazy" decoding="async">
                                 </div>
                             </div>
                             <div class="swiper-pagination"></div>
@@ -936,6 +994,25 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg>
                             Detroit News
                         </a>
+                    </div>
+                    <div class="countries-carousel">
+                        <h4>Other Countries Coming Soon</h4>
+                        <div class="swiper-container countries-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./assets/ukraine.png" alt="Ukraine flag design" loading="lazy" decoding="async">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/italy_mexico.png" alt="Italy Mexico design" loading="lazy" decoding="async">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/poland.png" alt="Poland flag design" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
                     </div>
                     <div class="image-gallery-grid">
                         <img src="./assets/abby_appa.JPG" alt="Abby and Appa wearing SWSH shirts" loading="lazy" decoding="async">
@@ -1185,6 +1262,38 @@
                 },
                 autoplay: {
                     delay: 3000,
+                    disableOnInteraction: false,
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 15,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                },
+            });
+            
+            // Initialize Countries Carousel
+            const countriesSwiper = new Swiper('.countries-swiper', {
+                slidesPerView: 3,
+                spaceBetween: 20,
+                pagination: {
+                    el: '.countries-swiper .swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.countries-swiper .swiper-button-next',
+                    prevEl: '.countries-swiper .swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 2500,
                     disableOnInteraction: false,
                 },
                 breakpoints: {
