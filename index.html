@@ -271,22 +271,6 @@
             display: inline-block;
         }
         
-        /* SWSH Carousel */
-        .swsh-carousel {
-            margin: 20px 0;
-        }
-        
-        .swsh-swiper {
-            max-width: 300px;
-            height: 200px;
-        }
-        
-        .swsh-swiper .swiper-slide img {
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            border-radius: 8px;
-        }
         
         /* Tagline Styling */
         .tagline {
@@ -346,25 +330,6 @@
             border-radius: 8px;
         }
         
-        /* SWSH Flags Carousel */
-        .swsh-flags-carousel {
-            margin: 20px 0;
-        }
-        
-        .swsh-flags-swiper {
-            max-width: 600px;
-            height: 300px;
-            background: #000;
-            border-radius: 12px;
-            margin: 0 auto;
-        }
-        
-        .swsh-flags-swiper .swiper-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 8px;
-        }
         
         /* SWSH Buttons */
         .swsh-button {
@@ -971,58 +936,25 @@
                 <!-- SWSH Card -->
                 <div class="product-card">
                     <h3>Spread Wings Spread Hope (SWSH)</h3>
-                    <div class="swsh-flags-carousel">
-                        <div class="swiper-container swsh-flags-swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="./assets/ukraine.png" alt="Ukraine flag design" loading="lazy" decoding="async">
-                    </div>
-                                <div class="swiper-slide">
-                                    <img src="./assets/poland.png" alt="Poland flag design" loading="lazy" decoding="async">
-                    </div>
-                                <div class="swiper-slide">
-                                    <img src="./assets/italy_mexico.png" alt="Italy Mexico design" loading="lazy" decoding="async">
-                    </div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                        </div>
-                    </div>
+                    <img src="./assets/ukraine.png" alt="Ukraine flag design" class="logo-placeholder" loading="lazy" decoding="async">
                     <p class="swsh-tagline">Butterfly-themed shirts supporting humanitarian causes.</p>
                     <p>Ukraine shirts raise funds for the <a href="https://dobrobut.foundation/en/home_en/" target="_blank" rel="noopener">Dobrobut Foundation</a> 🇺🇦</p>
-                    <div class="swsh-carousel">
-                        <div class="swiper-container swsh-swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="./assets/Alan_Faya_bench.jpg" alt="Alan and Faya on bench" loading="lazy" decoding="async">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="./assets/Alan_Faya.JPG" alt="Alan and Faya" loading="lazy" decoding="async">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="./assets/alan_nika_race.JPG" alt="Alan and Nika at race" loading="lazy" decoding="async">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="./assets/daniel.JPEG" alt="Daniel" loading="lazy" decoding="async">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="./assets/jaroh.JPEG" alt="Jaroh" loading="lazy" decoding="async">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="./assets/miles.JPG" alt="Miles" loading="lazy" decoding="async">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="./assets/tony.JPG" alt="Tony" loading="lazy" decoding="async">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="./assets/abby_appa.JPG" alt="Abby and Appa" loading="lazy" decoding="async">
-                                </div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                        </div>
+                    <div class="screenshot-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-slide">
+                                <img src="./assets/Alan_Faya_bench.jpg" alt="Alan and Faya on bench" loading="lazy" decoding="async">
+                                <img src="./assets/Alan_Faya.JPG" alt="Alan and Faya" loading="lazy" decoding="async">
+                                <img src="./assets/alan_nika_race.JPG" alt="Alan and Nika at race" loading="lazy" decoding="async">
+                                <img src="./assets/daniel.JPEG" alt="Daniel" loading="lazy" decoding="async">
+                                <img src="./assets/jaroh.JPEG" alt="Jaroh" loading="lazy" decoding="async">
+                                <img src="./assets/miles.JPG" alt="Miles" loading="lazy" decoding="async">
+                                <img src="./assets/tony.JPG" alt="Tony" loading="lazy" decoding="async">
+                                <img src="./assets/abby_appa.JPG" alt="Abby and Appa" loading="lazy" decoding="async">
+                    </div>
+                            <button class="carousel-btn prev" onclick="moveSWSHSlide(-1)">&#10094;</button>
+                            <button class="carousel-btn next" onclick="moveSWSHSlide(1)">&#10095;</button>
+                            <div class="carousel-dots"></div>
+                    </div>
                     </div>
                     <a href="https://www.instagram.com/spreadwingsspreadhope/?hl=en" target="_blank" rel="noopener" class="swsh-button instagram-button">Instagram</a>
                     <a href="https://www.detroitnews.com/story/sports/college/university-michigan/2023/06/11/michigan-gymnast-alan-gerdov-shirts-children-ukraine/70303164007/?fbclid=PAZXh0bgNhZW0CMTEAAad0Sdmmw1U_sf6tn4PvdmL2UmZkQzgYbCLCJDFdPy4BkkpQd31hckBg1V6PdQ_aem_SosKMwSkLMZ5HApFKBb-YA" target="_blank" rel="noopener" class="swsh-button detroit-button">Detroit News</a>
@@ -1195,56 +1127,7 @@
                 },
             });
             
-            // Initialize SWSH Carousel
-            const swshSwiper = new Swiper('.swsh-swiper', {
-                slidesPerView: 3,
-                spaceBetween: 20,
-                pagination: {
-                    el: '.swsh-swiper .swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swsh-swiper .swiper-button-next',
-                    prevEl: '.swsh-swiper .swiper-button-prev',
-                },
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
-                breakpoints: {
-                    320: {
-                        slidesPerView: 1,
-                        spaceBetween: 10,
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        spaceBetween: 15,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 20,
-                    },
-                },
-            });
             
-            // Initialize SWSH Flags Carousel
-            const swshFlagsSwiper = new Swiper('.swsh-flags-swiper', {
-                slidesPerView: 1,
-                spaceBetween: 0,
-                pagination: {
-                    el: '.swsh-flags-swiper .swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swsh-flags-swiper .swiper-button-next',
-                    prevEl: '.swsh-flags-swiper .swiper-button-prev',
-                },
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
-                loop: true,
-            });
             
             // Initialize Countries Carousel
             const countriesSwiper = new Swiper('.countries-swiper', {
@@ -1332,6 +1215,62 @@
             // Auto-transition for screenshot carousel
             setInterval(() => {
                 moveScreenshotSlide(1);
+            }, 4000); // Change image every 4 seconds
+            
+            // SWSH Carousel functionality
+            let swshSlideIndex = 0;
+            const swshSlides = document.querySelectorAll('.screenshot-carousel .carousel-slide')[1]; // Second carousel
+            const swshImages = document.querySelectorAll('.screenshot-carousel .carousel-slide img');
+            const totalSWSHSlides = 8; // SWSH has 8 images
+            const swshDotsContainer = document.querySelectorAll('.screenshot-carousel .carousel-dots')[1]; // Second carousel
+            
+            // Create dots for SWSH carousel
+            if (swshDotsContainer && totalSWSHSlides > 0) {
+                for (let i = 0; i < totalSWSHSlides; i++) {
+                    const dot = document.createElement('span');
+                    dot.classList.add('dot');
+                    dot.addEventListener('click', () => swshCurrentSlide(i));
+                    swshDotsContainer.appendChild(dot);
+                }
+            }
+            
+            const swshDots = document.querySelectorAll('.screenshot-carousel .carousel-dots .dot');
+            
+            function showSWSHSlides() {
+                if (swshSlides) {
+                    swshSlides.style.transform = `translateX(${-swshSlideIndex * 100}%)`;
+                }
+                swshDots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === swshSlideIndex);
+                });
+            }
+            
+            function moveSWSHSlide(n) {
+                swshSlideIndex += n;
+                if (swshSlideIndex >= totalSWSHSlides) {
+                    swshSlideIndex = 0;
+                }
+                if (swshSlideIndex < 0) {
+                    swshSlideIndex = totalSWSHSlides - 1;
+                }
+                showSWSHSlides();
+            }
+            
+            function swshCurrentSlide(n) {
+                swshSlideIndex = n;
+                showSWSHSlides();
+            }
+            
+            // Make functions global for onclick handlers
+            window.moveSWSHSlide = moveSWSHSlide;
+            window.swshCurrentSlide = swshCurrentSlide;
+            
+            // Initial display
+            showSWSHSlides();
+            
+            // Auto-transition for SWSH carousel
+            setInterval(() => {
+                moveSWSHSlide(1);
             }, 4000); // Change image every 4 seconds
         });
     </script>
