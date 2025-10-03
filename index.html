@@ -324,8 +324,8 @@
         }
         
         .countries-swiper .swiper-slide img {
-            width: 100%;
-            height: 100%;
+            width: 100%; 
+            height: 100%; 
             object-fit: contain;
             border-radius: 8px;
         }
@@ -364,6 +364,61 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
             color: white;
+        }
+        
+        /* Small Logo Styling */
+        .logo-small {
+            max-width: 200px;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+            border-radius: 8px;
+        }
+        
+        /* Smaller Product Cards */
+        .product-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .product-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .product-card p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #666;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .product-cards {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                max-width: 100%;
+            }
+            
+            .product-card {
+                padding: 15px;
+            }
+            
+            .logo-small {
+                max-width: 150px;
+            }
         }
         
         
@@ -908,103 +963,27 @@
                 <!-- MixMatch Card -->
                 <div class="product-card">
                     <h3>MixMatch</h3>
-                    <img src="./assets/mixmatch-logo-transparent.png" alt="MixMatch logo" class="logo-placeholder" loading="lazy" decoding="async">
-                    <!-- TODO: replace this image with your real file -->
                     <p class="tagline">Ball don't lie. Prove who's better.</p>
-                    <p>A 1v1 stat tracking app for tennis, basketball, and more.</p>
-                    <div class="screenshot-carousel">
-                        <div class="carousel-container">
-                            <div class="carousel-slide">
-                                <img src="./assets/mmss1.PNG" alt="MixMatch Home Screen" loading="lazy" decoding="async">
-                                <img src="./assets/mmss2.PNG" alt="MixMatch Tennis Match" loading="lazy" decoding="async">
-                                <img src="./assets/mmss3.PNG" alt="MixMatch Basketball Match" loading="lazy" decoding="async">
-                                <img src="./assets/mmss4.PNG" alt="MixMatch Friends List" loading="lazy" decoding="async">
-                                <img src="./assets/mmss5.PNG" alt="MixMatch Matchups History" loading="lazy" decoding="async">
-                                <img src="./assets/mmss6.PNG" alt="MixMatch Profile Stats" loading="lazy" decoding="async">
-                                <img src="./assets/mmss7.PNG" alt="MixMatch Head-to-Head Stats" loading="lazy" decoding="async">
-                                <img src="./assets/mmss8.PNG" alt="MixMatch About Page" loading="lazy" decoding="async">
-                            </div>
-                            <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-                            <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
-                            <div class="carousel-dots"></div>
-                        </div>
-                    </div>
-                    <button class="cta-button" disabled>App Store (coming soon)</button>
+                    <p>MixMatch is a sports stat-tracking app that lets friends connect, compete, and prove who's better in games like tennis and basketball, inspired by Alan's tennis rivalry with his friend Drew Mix. More sports and stats are on the way.</p>
+                    <p>To provide feedback, discuss partnerships, or provide feature requests, reach out to <a href="mailto:alan@themetelyk.com">alan@themetelyk.com</a></p>
                     <a href="https://www.privacypolicies.com/live/25b1d96f-919e-4348-af58-6dd980ff70aa" target="_blank" rel="noopener" class="privacy-button">Privacy Policy</a>
+                    <img src="./assets/mixmatch-logo-transparent.png" alt="MixMatch logo" class="logo-small" loading="lazy" decoding="async">
                 </div>
 
                 <!-- SWSH Card -->
                 <div class="product-card">
                     <h3>Spread Wings Spread Hope (SWSH)</h3>
-                    <img src="./assets/ukraine.png" alt="Ukraine flag design" class="logo-placeholder" loading="lazy" decoding="async">
                     <p class="swsh-tagline">Butterfly-themed shirts supporting humanitarian causes.</p>
-                    <p>Ukraine shirts raise funds for the <a href="https://dobrobut.foundation/en/home_en/" target="_blank" rel="noopener">Dobrobut Foundation</a> 🇺🇦</p>
-                    <div class="screenshot-carousel">
-                        <div class="carousel-container">
-                            <div class="carousel-slide">
-                                <img src="./assets/Alan_Faya_bench.jpg" alt="Alan and Faya on bench" loading="lazy" decoding="async">
-                                <img src="./assets/Alan_Faya.JPG" alt="Alan and Faya" loading="lazy" decoding="async">
-                                <img src="./assets/alan_nika_race.JPG" alt="Alan and Nika at race" loading="lazy" decoding="async">
-                                <img src="./assets/daniel.JPEG" alt="Daniel" loading="lazy" decoding="async">
-                                <img src="./assets/jaroh.JPEG" alt="Jaroh" loading="lazy" decoding="async">
-                                <img src="./assets/miles.JPG" alt="Miles" loading="lazy" decoding="async">
-                                <img src="./assets/tony.JPG" alt="Tony" loading="lazy" decoding="async">
-                                <img src="./assets/abby_appa.JPG" alt="Abby and Appa" loading="lazy" decoding="async">
-                    </div>
-                            <button class="carousel-btn prev" onclick="moveSWSHSlide(-1)">&#10094;</button>
-                            <button class="carousel-btn next" onclick="moveSWSHSlide(1)">&#10095;</button>
-                            <div class="carousel-dots"></div>
-                    </div>
-                    </div>
+                    <p>Spread Wings, Spread Hope began as a butterfly t-shirt campaign raising funds for Ukrainians impacted by the war, inspired by the iconic photo of Alan's father with a blue and yellow butterfly. New styles and country-inspired butterfly designs are on the way.</p>
                     <a href="https://www.instagram.com/spreadwingsspreadhope/?hl=en" target="_blank" rel="noopener" class="swsh-button instagram-button">Instagram</a>
                     <a href="https://www.detroitnews.com/story/sports/college/university-michigan/2023/06/11/michigan-gymnast-alan-gerdov-shirts-children-ukraine/70303164007/?fbclid=PAZXh0bgNhZW0CMTEAAad0Sdmmw1U_sf6tn4PvdmL2UmZkQzgYbCLCJDFdPy4BkkpQd31hckBg1V6PdQ_aem_SosKMwSkLMZ5HApFKBb-YA" target="_blank" rel="noopener" class="swsh-button detroit-button">Detroit News</a>
-                </div>
+                    <img src="./assets/nika_alan_dobrobut.jpg" alt="Nika and Alan at Dobrobut" class="logo-small" loading="lazy" decoding="async">
+                    </div>
             </div>
         </div>
     </section>
 
-    <!-- Dedicated SWSH Section -->
-    <section id="swsh" class="swsh">
-        <div class="container">
-            <h2>Spread Wings Spread Hope (SWSH)</h2>
-            <p>Spread Wings Spread Hope (SWSH) is a social initiative inspired by the Ukrainian word 'Metelyk' (butterfly). We sell butterfly-themed t-shirts to support humanitarian causes, with a focus on aiding those affected by conflict and hardship. Our mission is to spread hope and make a tangible difference in communities in need.</p>
-            <p class="cta-email">To buy a shirt, reach out to <a href="mailto:alan@themetelyk.com">alan@themetelyk.com</a></p>
-            <div class="external-links">
-                <a href="https://www.instagram.com/spreadwingsspreadhope/?hl=en" target="_blank" rel="noopener">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    Instagram
-                </a>
-                <a href="https://www.detroitnews.com/story/sports/college/university-michigan/2023/06/11/michigan-gymnast-alan-gerdov-shirts-children-ukraine/70303164007/?fbclid=PAZXh0bgNhZW0CMTEAAad0Sdmmw1U_sf6tn4PvdmL2UmZkQzgYbCLCJDFdPy4BkkpQd31hckBg1V6PdQ_aem_SosKMwSkLMZ5HApFKBb-YA" target="_blank" rel="noopener">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg>
-                    Detroit News Article
-                </a>
-            </div>
-            <figure>
-                <img src="./assets/nika_alan_dobrobut.jpg" alt="Nika and Alan supporting Dobrobut Foundation" loading="lazy" decoding="async">
-                <!-- TODO: replace this image with your real file -->
-                <figcaption>Nika and Alan supporting Dobrobut Foundation.</figcaption>
-            </figure>
-        </div>
-    </section>
 
-    <!-- Dedicated MixMatch Section -->
-    <section id="mixmatch" class="mixmatch">
-        <div class="container">
-            <h2>MixMatch</h2>
-            <img src="./assets/mixmatch-logo-blue.png" alt="MixMatch logo" class="logo-large" loading="lazy" decoding="async">
-            <!-- TODO: replace this image with your real file -->
-            <p>MixMatch is a dynamic sports tracking app designed for friends to connect, compete, and track their progress in various sports like tennis and basketball. It offers clean, intuitive statistics to help users analyze their performance and enjoy friendly rivalries.</p>
-            <div class="screenshot-rail">
-                <img src="./assets/mixmatch-shot-1.png" alt="MixMatch app screenshot 1" loading="lazy" decoding="async">
-                <!-- TODO: replace this image with your real file -->
-                <img src="./assets/mixmatch-shot-2.png" alt="MixMatch app screenshot 2" loading="lazy" decoding="async">
-                <!-- TODO: replace this image with your real file -->
-                <img src="./assets/mixmatch-shot-3.png" alt="MixMatch app screenshot 3" loading="lazy" decoding="async">
-                <!-- TODO: replace this image with your real file -->
-            </div>
-            <button class="cta-button" disabled>App Store (coming soon)</button>
-        </div>
-    </section>
 
 
     <!-- Contact Section -->
