@@ -140,34 +140,50 @@
         .hero { 
             background-color: #f0f2f5; 
             padding: 100px 0; 
-            text-align: center; 
         }
         
         .hero-content { 
-            max-width: 1000px; 
+            max-width: 1200px; 
             margin: 0 auto; 
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .hero-left {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .hero-right {
+            flex: 1;
         }
         
         .hero-text { 
-            text-align: center; 
             margin-bottom: 40px; 
         }
         
         .hero-text h1 { 
-            text-align: center; 
             font-size: 4.5rem; 
             margin-bottom: 20px; 
+            color: #2c3e50;
         }
         
-        .hero-text p { 
+        .hero-text .tagline { 
             font-size: 1.8rem; 
             color: #555; 
+            margin-bottom: 15px; 
+            font-weight: 500;
+        }
+        
+        .hero-text .subtitle { 
+            font-size: 1.2rem; 
+            color: #777; 
             margin-bottom: 30px; 
         }
         
         .hero-translation { 
             max-width: 400px; 
-            margin: 0 auto 40px auto; 
         }
         
         .hero-translation img { 
@@ -652,12 +668,26 @@
                 display: none; 
             }
             
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .hero-left {
+                text-align: center;
+            }
+            
             .hero-text h1 { 
                 font-size: 3rem; 
             }
             
-            .hero-text p { 
+            .hero-text .tagline { 
                 font-size: 1.3rem; 
+            }
+            
+            .hero-text .subtitle { 
+                font-size: 1rem; 
             }
             
             .carousel-container { 
@@ -784,30 +814,36 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Metelyk</h1>
-                    <p>Inspired by a Butterfly, Growing into More.</p>
-                </div>
-                <div class="hero-translation">
-                    <img src="./assets/translation.png" alt="Google Translate showing 'butterfly' translated to 'metelyk' in Ukrainian" loading="lazy" decoding="async">
-                    <!-- TODO: replace this image with your real file -->
-                </div>
-                <div class="carousel-container">
-                    <div class="carousel-slides">
-                        <div class="carousel-slide active">
-                            <img src="./assets/Inspiration.jpg" alt="Alan's father with butterfly in Ukrainian colors, inspiration for Metelyk" loading="lazy" decoding="async">
-                            <!-- TODO: replace this image with your real file -->
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="./assets/Alan_Faya_ukraine.jpg" alt="Alan and his grandmother with a Ukrainian flag" loading="lazy" decoding="async">
-                            <!-- TODO: replace this image with your real file -->
-                        </div>
+                <div class="hero-left">
+                    <div class="hero-text">
+                        <h1>Metelyk</h1>
+                        <p class="tagline">Inspired by a Butterfly, Growing into More.</p>
+                        <p class="subtitle">Building focused digital products that make a difference.</p>
                     </div>
-                    <button class="carousel-controls carousel-prev" aria-label="Previous image">‹</button>
-                    <button class="carousel-controls carousel-next" aria-label="Next image">›</button>
-                    <div class="carousel-dots">
-                        <button class="carousel-dot active" aria-label="Go to slide 1"></button>
-                        <button class="carousel-dot" aria-label="Go to slide 2"></button>
+                    <div class="hero-translation">
+                        <img src="./assets/translation.png" alt="Google Translate showing 'butterfly' translated to 'metelyk' in Ukrainian" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="carousel-container">
+                        <div class="carousel-slides">
+                            <div class="carousel-slide active">
+                                <img src="./assets/Inspiration.jpg" alt="Alan's father with butterfly in Ukrainian colors, inspiration for Metelyk" loading="lazy" decoding="async">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="./assets/Alan_Faya_ukraine.jpg" alt="Alan and his grandmother with a Ukrainian flag" loading="lazy" decoding="async">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="./assets/nika_alan_dobrobut.jpg" alt="Nika and Alan at Dobrobut" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                        <button class="carousel-controls carousel-prev" aria-label="Previous image">‹</button>
+                        <button class="carousel-controls carousel-next" aria-label="Next image">›</button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" aria-label="Go to slide 1"></button>
+                            <button class="carousel-dot" aria-label="Go to slide 2"></button>
+                            <button class="carousel-dot" aria-label="Go to slide 3"></button>
+                        </div>
                     </div>
                 </div>
             </div>
