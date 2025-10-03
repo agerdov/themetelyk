@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metelyk - Building Focused Digital Products</title>
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         /* Reset & Base Styles */
         *, *::before, *::after { 
@@ -200,105 +203,61 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
         }
         
-        /* Image Carousel */
-        .carousel-container { 
-            position: relative; 
-            max-width: 700px; 
+        /* Swiper Carousel */
+        .swiper-container {
             width: 100%;
-            margin: 0 auto; 
-            overflow: hidden; 
-            border-radius: 12px; 
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15); 
+            max-width: 800px;
+            height: 500px;
+            margin: 0 auto;
+            padding: 20px 0;
         }
         
-        .carousel-slides { 
-            position: relative; 
-            width: 100%; 
-            height: 500px; 
-        }
-        
-        .carousel-slide { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            opacity: 0; 
-            transition: opacity 1s ease-in-out; 
+        .swiper-slide {
             display: flex;
             justify-content: center;
             align-items: center;
+            background: transparent;
         }
         
-        .carousel-slide.active { 
-            opacity: 1; 
-        }
-        
-        .carousel-slide img { 
-            max-width: 100%; 
-            max-height: 100%; 
+        .swiper-slide img {
+            max-width: 100%;
+            max-height: 100%;
             width: auto;
             height: auto;
-            object-fit: contain; 
-            display: block; 
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         
-        .carousel-controls { 
-            position: absolute; 
-            top: 50%; 
-            transform: translateY(-50%); 
-            background: rgba(255, 255, 255, 0.8); 
-            border: none; 
-            width: 50px; 
-            height: 50px; 
-            border-radius: 50%; 
-            cursor: pointer; 
-            font-size: 1.5rem; 
-            color: #333; 
-            transition: all 0.3s ease; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
+        .swiper-pagination {
+            position: relative;
+            margin-top: 20px;
         }
         
-        .carousel-controls:hover { 
-            background: rgba(255, 255, 255, 0.95); 
-            transform: translateY(-50%) scale(1.1); 
+        .swiper-pagination-bullet {
+            background: #007bff;
+            opacity: 0.5;
         }
         
-        .carousel-prev { 
-            left: 15px; 
+        .swiper-pagination-bullet-active {
+            opacity: 1;
         }
         
-        .carousel-next { 
-            right: 15px; 
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #007bff;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            margin-top: -22px;
         }
         
-        .carousel-dots { 
-            display: flex; 
-            justify-content: center; 
-            gap: 10px; 
-            margin-top: 20px; 
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 18px;
         }
         
-        .carousel-dot { 
-            width: 12px; 
-            height: 12px; 
-            border-radius: 50%; 
-            background: rgba(0, 0, 0, 0.3); 
-            border: none; 
-            cursor: pointer; 
-            transition: all 0.3s ease; 
-        }
-        
-        .carousel-dot.active { 
-            background: #007bff; 
-            transform: scale(1.2); 
-        }
-        
-        .carousel-dot:hover { 
-            background: #0056b3; 
-        }
         
         
         /* Products Section */
@@ -710,26 +669,9 @@
                 font-size: 1rem; 
             }
             
-            .carousel-container { 
+            .swiper-container { 
                 max-width: 90%; 
-            }
-            
-            .carousel-slides { 
                 height: 350px; 
-            }
-            
-            .carousel-controls { 
-                width: 40px; 
-                height: 40px; 
-                font-size: 1.2rem; 
-            }
-            
-            .carousel-prev { 
-                left: 10px; 
-            }
-            
-            .carousel-next { 
-                right: 10px; 
             }
             
             .product-cards { 
@@ -767,26 +709,9 @@
                 font-size: 1.1rem;
             }
             
-            .carousel-container { 
+            .swiper-container { 
                 max-width: 95%; 
-            }
-            
-            .carousel-slides { 
                 height: 250px; 
-            }
-            
-            .carousel-controls { 
-                width: 35px; 
-                height: 35px; 
-                font-size: 1rem; 
-            }
-            
-            .carousel-prev { 
-                left: 5px; 
-            }
-            
-            .carousel-next { 
-                right: 5px; 
             }
             
             h1 {
@@ -838,32 +763,27 @@
                     <div class="hero-text">
                         <h1>Metelyk</h1>
                         <p class="tagline">Inspired by a Butterfly, Growing into More.</p>
-                        <p class="subtitle">Building focused digital products that make a difference.</p>
                     </div>
                     <div class="hero-translation">
                         <img src="./assets/translation.png" alt="Google Translate showing 'butterfly' translated to 'metelyk' in Ukrainian" loading="lazy" decoding="async">
                     </div>
                 </div>
                 <div class="hero-right">
-                    <div class="carousel-container">
-                        <div class="carousel-slides">
-                            <div class="carousel-slide active">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
                                 <img src="./assets/Inspiration.jpg" alt="Alan's father with butterfly in Ukrainian colors, inspiration for Metelyk" loading="lazy" decoding="async">
                             </div>
-                            <div class="carousel-slide">
+                            <div class="swiper-slide">
                                 <img src="./assets/Alan_Faya_ukraine.jpg" alt="Alan and his grandmother with a Ukrainian flag" loading="lazy" decoding="async">
                             </div>
-                            <div class="carousel-slide">
+                            <div class="swiper-slide">
                                 <img src="./assets/nika_alan_dobrobut.jpg" alt="Nika and Alan at Dobrobut" loading="lazy" decoding="async">
                             </div>
                         </div>
-                        <button class="carousel-controls carousel-prev" aria-label="Previous image">‹</button>
-                        <button class="carousel-controls carousel-next" aria-label="Next image">›</button>
-                        <div class="carousel-dots">
-                            <button class="carousel-dot active" aria-label="Go to slide 1"></button>
-                            <button class="carousel-dot" aria-label="Go to slide 2"></button>
-                            <button class="carousel-dot" aria-label="Go to slide 3"></button>
-                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
                 </div>
             </div>
@@ -1011,6 +931,9 @@
         </div>
     </footer>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
     <!-- Smooth Scroll Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1070,73 +993,46 @@
                 observer.observe(section);
             });
             
-            // Image Carousel functionality
-            const carouselSlides = document.querySelectorAll('.carousel-slide');
-            const carouselDots = document.querySelectorAll('.carousel-dot');
-            const prevButton = document.querySelector('.carousel-prev');
-            const nextButton = document.querySelector('.carousel-next');
-            let currentSlide = 0;
-            let carouselInterval;
-            
-            function showSlide(index) {
-                // Remove active class from all slides and dots
-                carouselSlides.forEach(slide => slide.classList.remove('active'));
-                carouselDots.forEach(dot => dot.classList.remove('active'));
-                
-                // Add active class to current slide and dot
-                carouselSlides[index].classList.add('active');
-                carouselDots[index].classList.add('active');
-                
-                currentSlide = index;
-            }
-            
-            function nextSlide() {
-                const nextIndex = (currentSlide + 1) % carouselSlides.length;
-                showSlide(nextIndex);
-            }
-            
-            function prevSlide() {
-                const prevIndex = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
-                showSlide(prevIndex);
-            }
-            
-            function startCarousel() {
-                carouselInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
-            }
-            
-            function stopCarousel() {
-                clearInterval(carouselInterval);
-            }
-            
-            // Event listeners
-            nextButton.addEventListener('click', function() {
-                nextSlide();
-                stopCarousel();
-                startCarousel(); // Restart the timer
+            // Initialize Swiper with coverflow effect
+            const swiper = new Swiper('.swiper-container', {
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 3,
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
+                },
             });
-            
-            prevButton.addEventListener('click', function() {
-                prevSlide();
-                stopCarousel();
-                startCarousel(); // Restart the timer
-            });
-            
-            // Dot navigation
-            carouselDots.forEach((dot, index) => {
-                dot.addEventListener('click', function() {
-                    showSlide(index);
-                    stopCarousel();
-                    startCarousel(); // Restart the timer
-                });
-            });
-            
-            // Pause carousel on hover
-            const carouselContainer = document.querySelector('.carousel-container');
-            carouselContainer.addEventListener('mouseenter', stopCarousel);
-            carouselContainer.addEventListener('mouseleave', startCarousel);
-            
-            // Start the carousel
-            startCarousel();
             
             // MixMatch Screenshot Carousel functionality
             let screenshotSlideIndex = 0;
