@@ -346,40 +346,61 @@
             border-radius: 8px;
         }
         
-        /* Butterflies Coming Soon Animation */
-        .butterflies-conveyor {
+        /* SWSH Flags Carousel */
+        .swsh-flags-carousel {
+            margin: 20px 0;
+        }
+        
+        .swsh-flags-swiper {
+            max-width: 600px;
+            height: 300px;
             background: #000;
-            padding: 40px 0;
-            overflow: hidden;
-            position: relative;
+            border-radius: 12px;
+            margin: 0 auto;
         }
         
-        .butterflies-track {
-            display: flex; 
-            animation: conveyor-belt 20s linear infinite;
-            gap: 20px;
-        }
-        
-        .butterfly-flag {
-            flex-shrink: 0;
-            width: 100px;
-            height: 60px;
-            background: #fff;
+        .swsh-flags-swiper .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
             border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
         }
         
-        @keyframes conveyor-belt {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
+        /* SWSH Buttons */
+        .swsh-button {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: all 0.3s ease; 
         }
+        
+        .instagram-button {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            color: white;
+        }
+        
+        .instagram-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(240, 148, 51, 0.4);
+            color: white;
+        }
+        
+        .detroit-button {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .detroit-button:hover {
+            background: #c82333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+            color: white;
+        }
+        
         
         
         
@@ -950,6 +971,24 @@
                 <!-- SWSH Card -->
                 <div class="product-card">
                     <h3>Spread Wings Spread Hope (SWSH)</h3>
+                    <div class="swsh-flags-carousel">
+                        <div class="swiper-container swsh-flags-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./assets/ukraine.png" alt="Ukraine flag design" loading="lazy" decoding="async">
+                    </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/poland.png" alt="Poland flag design" loading="lazy" decoding="async">
+                    </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/italy_mexico.png" alt="Italy Mexico design" loading="lazy" decoding="async">
+                    </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
                     <p class="swsh-tagline">Butterfly-themed shirts supporting humanitarian causes.</p>
                     <p>Ukraine shirts raise funds for the <a href="https://dobrobut.foundation/en/home_en/" target="_blank" rel="noopener">Dobrobut Foundation</a> 🇺🇦</p>
                     <div class="swsh-carousel">
@@ -985,62 +1024,8 @@
                             <div class="swiper-button-prev"></div>
                         </div>
                     </div>
-                    <div class="link-row">
-                        <a href="https://www.instagram.com/spreadwingsspreadhope/?hl=en" target="_blank" rel="noopener">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                            Instagram
-                        </a>
-                        <a href="https://www.detroitnews.com/story/sports/college/university-michigan/2023/06/11/michigan-gymnast-alan-gerdov-shirts-children-ukraine/70303164007/?fbclid=PAZXh0bgNhZW0CMTEAAad0Sdmmw1U_sf6tn4PvdmL2UmZkQzgYbCLCJDFdPy4BkkpQd31hckBg1V6PdQ_aem_SosKMwSkLMZ5HApFKBb-YA" target="_blank" rel="noopener">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg>
-                            Detroit News
-                        </a>
-                    </div>
-                    <div class="countries-carousel">
-                        <h4>Other Countries Coming Soon</h4>
-                        <div class="swiper-container countries-swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="./assets/ukraine.png" alt="Ukraine flag design" loading="lazy" decoding="async">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="./assets/italy_mexico.png" alt="Italy Mexico design" loading="lazy" decoding="async">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="./assets/poland.png" alt="Poland flag design" loading="lazy" decoding="async">
-                                </div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                        </div>
-                    </div>
-                    <div class="image-gallery-grid">
-                        <img src="./assets/abby_appa.JPG" alt="Abby and Appa wearing SWSH shirts" loading="lazy" decoding="async">
-                        <!-- TODO: replace this image with your real file -->
-                        <img src="./assets/Alan_Faya_bench.jpg" alt="Alan and Faya on a bench wearing SWSH shirts" loading="lazy" decoding="async">
-                        <!-- TODO: replace this image with your real file -->
-                        <img src="./assets/Alan_Faya.JPG" alt="Alan and Faya wearing SWSH shirts" loading="lazy" decoding="async">
-                        <!-- TODO: replace this image with your real file -->
-                        <img src="./assets/alan_nika_race.JPG" alt="Alan and Nika at a race wearing SWSH shirts" loading="lazy" decoding="async">
-                        <!-- TODO: replace this image with your real file -->
-                        <img src="./assets/daniel.JPEG" alt="Daniel wearing an SWSH shirt" loading="lazy" decoding="async">
-                        <!-- TODO: replace this image with your real file -->
-                        <img src="./assets/jaroh.JPEG" alt="Jaroh wearing an SWSH shirt" loading="lazy" decoding="async">
-                        <!-- TODO: replace this image with your real file -->
-                        <img src="./assets/miles.JPG" alt="Miles wearing an SWSH shirt" loading="lazy" decoding="async">
-                        <!-- TODO: replace this image with your real file -->
-                        <img src="./assets/tony.JPG" alt="Tony wearing an SWSH shirt" loading="lazy" decoding="async">
-                        <!-- TODO: replace this image with your real file -->
-                    </div>
-                    <p>Coming soon to other countries:</p>
-                    <div class="countries-row">
-                        <img src="./assets/ukraine.png" alt="Ukraine flag" loading="lazy" decoding="async">
-                        <!-- TODO: replace this image with your real file -->
-                        <img src="./assets/poland.png" alt="Poland flag" loading="lazy" decoding="async">
-                        <!-- TODO: replace this image with your real file -->
-                        <img src="./assets/italy_mexico.png" alt="Italy and Mexico flags" loading="lazy" decoding="async">
-                        <!-- TODO: replace this image with your real file -->
-                    </div>
+                    <a href="https://www.instagram.com/spreadwingsspreadhope/?hl=en" target="_blank" rel="noopener" class="swsh-button instagram-button">Instagram</a>
+                    <a href="https://www.detroitnews.com/story/sports/college/university-michigan/2023/06/11/michigan-gymnast-alan-gerdov-shirts-children-ukraine/70303164007/?fbclid=PAZXh0bgNhZW0CMTEAAad0Sdmmw1U_sf6tn4PvdmL2UmZkQzgYbCLCJDFdPy4BkkpQd31hckBg1V6PdQ_aem_SosKMwSkLMZ5HApFKBb-YA" target="_blank" rel="noopener" class="swsh-button detroit-button">Detroit News</a>
                 </div>
             </div>
         </div>
@@ -1089,44 +1074,6 @@
         </div>
     </section>
 
-    <!-- Butterflies Coming Soon Section -->
-    <section class="butterflies-conveyor">
-        <div class="container">
-            <h2 style="color: white; text-align: center; margin-bottom: 30px;">Butterflies Coming Soon to Other Countries</h2>
-            <div class="butterflies-track">
-                <div class="butterfly-flag">🇺🇦</div>
-                <div class="butterfly-flag">🇵🇱</div>
-                <div class="butterfly-flag">🇮🇹</div>
-                <div class="butterfly-flag">🇲🇽</div>
-                <div class="butterfly-flag">🇺🇸</div>
-                <div class="butterfly-flag">🇨🇦</div>
-                <div class="butterfly-flag">🇬🇧</div>
-                <div class="butterfly-flag">🇩🇪</div>
-                <div class="butterfly-flag">🇫🇷</div>
-                <div class="butterfly-flag">🇪🇸</div>
-                <div class="butterfly-flag">🇯🇵</div>
-                <div class="butterfly-flag">🇰🇷</div>
-                <div class="butterfly-flag">🇦🇺</div>
-                <div class="butterfly-flag">🇧🇷</div>
-                <div class="butterfly-flag">🇦🇷</div>
-                <div class="butterfly-flag">🇨🇱</div>
-                <div class="butterfly-flag">🇨🇴</div>
-                <div class="butterfly-flag">🇵🇪</div>
-                <div class="butterfly-flag">🇿🇦</div>
-                <div class="butterfly-flag">🇳🇬</div>
-                <div class="butterfly-flag">🇰🇪</div>
-                <div class="butterfly-flag">🇪🇬</div>
-                <div class="butterfly-flag">🇮🇳</div>
-                <div class="butterfly-flag">🇨🇳</div>
-                <div class="butterfly-flag">🇹🇭</div>
-                <div class="butterfly-flag">🇻🇳</div>
-                <div class="butterfly-flag">🇮🇩</div>
-                <div class="butterfly-flag">🇵🇭</div>
-                <div class="butterfly-flag">🇲🇾</div>
-                <div class="butterfly-flag">🇸🇬</div>
-            </div>
-        </div>
-    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -1278,6 +1225,25 @@
                         spaceBetween: 20,
                     },
                 },
+            });
+            
+            // Initialize SWSH Flags Carousel
+            const swshFlagsSwiper = new Swiper('.swsh-flags-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                pagination: {
+                    el: '.swsh-flags-swiper .swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swsh-flags-swiper .swiper-button-next',
+                    prevEl: '.swsh-flags-swiper .swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                loop: true,
             });
             
             // Initialize Countries Carousel
