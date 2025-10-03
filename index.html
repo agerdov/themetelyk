@@ -8,6 +8,11 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./assets/ukraine.png">
     
+    <!-- Preload critical images for faster loading -->
+    <link rel="preload" as="image" href="./assets/Inspiration.jpg">
+    <link rel="preload" as="image" href="./assets/Alan_Faya_ukraine.jpg">
+    <link rel="preload" as="image" href="./assets/nika_alan_dobrobut.jpg">
+    
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
@@ -337,8 +342,8 @@
             font-weight: 600;
             margin: 10px 5px;
             transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            border: none; 
+            cursor: pointer; 
         }
         
         .instagram-button {
@@ -393,6 +398,35 @@
         .coming-soon-text {
             text-align: center;
             margin: 15px 0;
+        }
+        
+        /* Image Loading Optimizations */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Loading state for images */
+        .image-loading {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* Optimize image rendering */
+        .swiper-slide img,
+        .logo-large,
+        .logo-small,
+        .logo-tiny {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            will-change: transform;
         }
         
         
@@ -1289,10 +1323,39 @@
             // Initial display
             showSWSHSlides();
             
-            // Auto-transition for SWSH carousel
-            setInterval(() => {
-                moveSWSHSlide(1);
-            }, 4000); // Change image every 4 seconds
+        // Auto-transition for SWSH carousel
+        setInterval(() => {
+            moveSWSHSlide(1);
+        }, 4000); // Change image every 4 seconds
+        
+        // Image loading optimization
+        function optimizeImageLoading() {
+            const images = document.querySelectorAll('img');
+            
+            images.forEach(img => {
+                // Add loading class initially
+                img.classList.add('image-loading');
+                
+                // Remove loading class when image loads
+                img.addEventListener('load', function() {
+                    this.classList.remove('image-loading');
+                });
+                
+                // Handle load errors
+                img.addEventListener('error', function() {
+                    this.classList.remove('image-loading');
+                    console.warn('Failed to load image:', this.src);
+                });
+                
+                // Add fetchpriority for above-the-fold images
+                if (img.closest('.hero-right') || img.classList.contains('logo-large')) {
+                    img.setAttribute('fetchpriority', 'high');
+                }
+            });
+        }
+        
+        // Initialize image optimization when DOM is loaded
+        document.addEventListener('DOMContentLoaded', optimizeImageLoading);
         });
     </script>
 </body>
